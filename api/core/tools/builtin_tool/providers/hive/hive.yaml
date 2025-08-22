@@ -1,0 +1,59 @@
+identity:
+  author: Dify
+  name: hive
+  label:
+    en_US: Hive Database
+    zh_Hans: Hive 数据库
+  description:
+    en_US: Connect to Apache Hive and execute SQL queries with INSERT OVERWRITE support.
+    zh_Hans: 连接到 Apache Hive 并执行 SQL 查询，支持 INSERT OVERWRITE 语法。
+  icon: icon.svg
+  tags:
+    - database
+    - analytics
+credentials_for_provider:
+  host:
+    type: text-input
+    required: true
+    label:
+      en_US: Host
+      zh_Hans: 主机
+    placeholder:
+      en_US: localhost
+      zh_Hans: localhost
+  port:
+    type: text-input
+    required: true
+    label:
+      en_US: Port
+      zh_Hans: 端口
+    placeholder:
+      en_US: 10000
+      zh_Hans: 10000
+  username:
+    type: text-input
+    required: false
+    label:
+      en_US: Username
+      zh_Hans: 用户名
+    placeholder:
+      en_US: Username
+      zh_Hans: 用户名
+  password:
+    type: secret-input
+    required: false
+    label:
+      en_US: Password
+      zh_Hans: 密码
+    placeholder:
+      en_US: Password
+      zh_Hans: 密码
+  database:
+    type: text-input
+    required: false
+    label:
+      en_US: Database
+      zh_Hans: 数据库
+    placeholder:
+      en_US: default
+      zh_Hans: default

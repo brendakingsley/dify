@@ -1,0 +1,35 @@
+identity:
+  name: query
+  author: Dify
+  label:
+    en_US: Hive Query
+    zh_Hans: Hive 查询
+description:
+  human:
+    en_US: Execute general Hive SQL queries for data retrieval and analysis.
+    zh_Hans: 执行一般的 Hive SQL 查询进行数据检索和分析。
+  llm: A tool for executing Hive SQL queries to retrieve data and analyze tables. Supports SELECT, SHOW, DESCRIBE commands.
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: SQL Query
+      zh_Hans: SQL 查询
+    human_description:
+      en_US: The Hive SQL query to execute (SELECT, SHOW, DESCRIBE, etc.)
+      zh_Hans: 要执行的 Hive SQL 查询（SELECT、SHOW、DESCRIBE 等）
+    llm_description: "The SQL query to execute. Examples include SELECT * FROM table_name LIMIT 10; SHOW TABLES; DESCRIBE table_name;"
+    form: llm
+  - name: limit
+    type: number
+    required: false
+    default: 100
+    label:
+      en_US: Result Limit
+      zh_Hans: 结果限制
+    human_description:
+      en_US: "Maximum number of rows to return (default: 100)"
+      zh_Hans: "返回的最大行数（默认：100）"
+    llm_description: Maximum number of rows to return from the query result
+    form: form

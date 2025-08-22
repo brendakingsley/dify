@@ -1,0 +1,35 @@
+identity:
+  name: insert_overwrite
+  author: Dify
+  label:
+    en_US: Hive INSERT OVERWRITE
+    zh_Hans: Hive INSERT OVERWRITE
+description:
+  human:
+    en_US: Execute Hive INSERT OVERWRITE queries to replace table data or partitions.
+    zh_Hans: 执行 Hive INSERT OVERWRITE 查询来替换表数据或分区。
+  llm: A tool for executing Hive INSERT OVERWRITE statements to replace existing data in tables or partitions. This operation completely replaces the target data.
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: INSERT OVERWRITE Query
+      zh_Hans: INSERT OVERWRITE 查询
+    human_description:
+      en_US: The Hive INSERT OVERWRITE SQL query to execute
+      zh_Hans: 要执行的 Hive INSERT OVERWRITE SQL 查询
+    llm_description: "The complete INSERT OVERWRITE SQL query. Example format: INSERT OVERWRITE TABLE target_table PARTITION(year=2024) SELECT * FROM source_table WHERE conditions;"
+    form: llm
+  - name: timeout
+    type: number
+    required: false
+    default: 300
+    label:
+      en_US: Query Timeout (seconds)
+      zh_Hans: 查询超时（秒）
+    human_description:
+      en_US: "Maximum time to wait for query execution (default: 300 seconds)"
+      zh_Hans: "查询执行的最大等待时间（默认：300秒）"
+    llm_description: Timeout in seconds for the query execution
+    form: form
