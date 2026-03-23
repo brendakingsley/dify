@@ -1,0 +1,82 @@
+identity:
+  name: check_sql_logic
+  author: Dify
+  label:
+    en_US: SQL Logic Checker
+    zh_Hans: SQL 逻辑检查器
+    pt_BR: Verificador de Lógica SQL
+description:
+  human:
+    en_US: >
+      Analyze a SQL script and detect common logic issues such as NULL-unsafe
+      arithmetic after LEFT JOINs, missing NULL guards (NVL/COALESCE/ISNULL),
+      ambiguous UNION ALL duplicates, non-deterministic ROW_NUMBER tie-breaking,
+      and unfiltered LEFT JOIN results that may unintentionally include
+      non-matching rows.
+    zh_Hans: >
+      分析 SQL 脚本，检测常见逻辑问题，包括：LEFT JOIN 后的 NULL 不安全算术运算、
+      缺少 NVL/COALESCE/ISNULL 保护的算术操作、UNION ALL 潜在重复行、
+      ROW_NUMBER 并列值处理不当，以及 LEFT JOIN 结果中未过滤的 NULL 行。
+    pt_BR: >
+      Analisa um script SQL e detecta problemas lógicos comuns, como aritmética
+      insegura para NULL após LEFT JOINs, falta de proteção NULL (NVL/COALESCE/ISNULL),
+      duplicatas ambíguas em UNION ALL, desempate não determinístico com ROW_NUMBER
+      e resultados de LEFT JOIN não filtrados que podem incluir linhas sem correspondência.
+  llm: >
+    A tool that statically analyzes a SQL script and returns a list of potential
+    logic issues with descriptions, affected lines, severity level, and suggested
+    fixes. Useful when users ask to review, audit, or debug SQL code.
+parameters:
+  - name: sql_script
+    type: string
+    required: true
+    label:
+      en_US: SQL Script
+      zh_Hans: SQL 脚本
+      pt_BR: Script SQL
+    human_description:
+      en_US: The full SQL script to be analyzed.
+      zh_Hans: 需要分析的完整 SQL 脚本。
+      pt_BR: O script SQL completo a ser analisado.
+    llm_description: The SQL script text to analyze for logic, NULL-safety, and performance issues.
+    form: llm
+  - name: dialect
+    type: select
+    required: false
+    label:
+      en_US: SQL Dialect
+      zh_Hans: SQL 方言
+      pt_BR: Dialeto SQL
+    human_description:
+      en_US: The SQL dialect in use (affects NULL-function name suggestions).
+      zh_Hans: 使用的 SQL 方言（影响 NULL 保护函数名称的建议）。
+      pt_BR: O dialeto SQL em uso (afeta sugestões de nomes de funções NULL).
+    llm_description: SQL dialect, e.g. hive, spark, oracle, mysql, postgresql. Defaults to hive.
+    form: llm
+    default: hive
+    options:
+      - value: hive
+        label:
+          en_US: Hive / Spark SQL
+          zh_Hans: Hive / Spark SQL
+          pt_BR: Hive / Spark SQL
+      - value: oracle
+        label:
+          en_US: Oracle
+          zh_Hans: Oracle
+          pt_BR: Oracle
+      - value: mysql
+        label:
+          en_US: MySQL
+          zh_Hans: MySQL
+          pt_BR: MySQL
+      - value: postgresql
+        label:
+          en_US: PostgreSQL
+          zh_Hans: PostgreSQL
+          pt_BR: PostgreSQL
+      - value: mssql
+        label:
+          en_US: SQL Server
+          zh_Hans: SQL Server
+          pt_BR: SQL Server

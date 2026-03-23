@@ -1,0 +1,15 @@
+identity:
+  author: Dify
+  name: sql_analysis
+  label:
+    en_US: SQL Analysis
+    zh_Hans: SQL 分析
+    pt_BR: Análise SQL
+  description:
+    en_US: A toolkit for analyzing SQL scripts to detect logic, NULL-safety, and performance issues.
+    zh_Hans: 一套用于检查 SQL 脚本逻辑错误、NULL 安全性和性能问题的工具集。
+    pt_BR: Um conjunto de ferramentas para analisar scripts SQL e detectar problemas de lógica, segurança NULL e desempenho.
+  icon: icon.svg
+  tags:
+    - productivity
+credentials_for_provider: {}
